@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <%- include("partials/nav.ejs") %>
+    
+  
+    <!-- <h1>Your Previus blogs</h1> -->
+  
+    <div class="row py-lg-5 text-center mx-auto" style="padding-top: 10%;background-color: #61677A;">
+      <form action="/editEnd" method="post">
+        <!-- Text Input -->
+        <label style="display: block;" for="name"><strong><h2 style="color: white;">Blog Title</h2></strong></label>
+        <input style="width: 50vw; border-radius: 5px; border: solid;" type="text" value="<%- blogBody.name %>" id="name" name="name" required>
+    
+        <!-- Textarea -->
+        <div class="form-floating" style="margin: 5%; margin-bottom: 0%;">
+          <textarea style="border: solid; height: fit-content;" name = "content" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"><%- blogBody.content %></textarea>
+          <label for="floatingTextarea">Start Editing Your Blog</label>
+        </div>
+        <input type="hidden" name="buttonClass" value="<%- blogId %>">
+        <button style="background-color: red;font-size: 25px;" type="submit" class="btn btn-primary my-2"><strong>Save</strong></button>
+    </form>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+    <script src = "index1.js" charset="UTF-8"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
